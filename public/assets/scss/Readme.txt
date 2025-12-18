@@ -1,0 +1,3 @@
+The .shref="{{ asset('assets/') }}
+ (Sass) files are only available in the pro version.
+You can buy it from: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
