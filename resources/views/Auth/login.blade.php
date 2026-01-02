@@ -7,9 +7,8 @@
     <title>Connexion - Medilab</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    
+
     <style>
-        
         body {
             background: #f8f9fa;
             height: 100vh;
@@ -41,10 +40,6 @@
             width: 100%;
             padding: 12px;
         }
-
-
-
-
     </style>
 </head>
 
@@ -61,7 +56,7 @@
         </div>
         @endif
 
-        <form method="POST" action="">
+        <form method="POST" action="{{ route('login') }}">
             @csrf
 
             <div class="mb-3">
@@ -98,10 +93,11 @@
             </button>
 
             <div class="text-center mt-3">
-                <a href="" class="text-decoration-none">
+                <a href="{{ route('register') }}" class="text-decoration-none">
                     Créer un compte
                 </a>
             </div>
+
         </form>
     </div>
 </body>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -67,7 +68,7 @@
         </div>
         @endif
 
-        <form method="POST" action="">
+        <form method="POST" action="{{ route('register') }}">
             @csrf
 
             <div class="row">
@@ -76,7 +77,7 @@
                     <input type="text"
                         name="first_name"
                         class="form-control"
-                        placeholder="Jean"
+                        placeholder="Maurice"
                         required>
                 </div>
 
@@ -85,7 +86,7 @@
                     <input type="text"
                         name="last_name"
                         class="form-control"
-                        placeholder="Dupont"
+                        placeholder="Enkoura"
                         required>
                 </div>
             </div>
@@ -144,7 +145,7 @@
             </button>
 
             <div class="text-center mt-3">
-                <a href="" class="text-decoration-none">
+                <a href="{{ route('login') }}" class="text-decoration-none">
                     Déjà un compte ? Se connecter
                 </a>
             </div>

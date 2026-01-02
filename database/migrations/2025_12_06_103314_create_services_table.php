@@ -12,15 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('services', function (Blueprint $table) {
-           $table->id();
- $table->string('titre');
- $table->text('description')->nullable();
- $table->decimal('prix', 8, 2)->default(0);
- $table->integer('duree');
- $table->enum('statut', ['actif', 'inactif'])->default('actif');
- $table->unsignedBigInteger('medecin_id')->nullable();
- $table->timestamps();
- $table->foreign('medecin_id')->references('id')->on('users');
+            $table->id();
+            $table->string('titre');
+            $table->text('description')->nullable();
+            $table->decimal('prix', 8, 2)->default(0);
+            $table->integer('duree');
+            $table->date('date')->nullable();
+            $table->enum('statut', ['actif', 'inactif'])->default('actif');
+            $table->unsignedBigInteger('medecin_id')->nullable();
+            $table->timestamps();
+            $table->foreign('medecin_id')->references('id')->on('users');
         });
     }
 
