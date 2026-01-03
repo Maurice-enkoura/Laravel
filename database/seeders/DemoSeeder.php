@@ -43,7 +43,7 @@ class DemoSeeder extends Seeder
             'description' => 'Consultation de base.',
             'prix' => 15000,
             'duree' => 30,
-            'date' => now()->addDays(3),
+            //'date' => now()->addDays(3),
             'statut' => 'actif',
             'medecin_id' => $medecin->id
         ]);
@@ -107,7 +107,7 @@ class DemoSeeder extends Seeder
             'description' => 'Consultation avec un spécialiste.',
             'prix' => 25000,
             'duree' => 45,
-            'date' => now()->addDays(5),
+           /// 'date' => now()->addDays(5),
             'statut' => 'actif',
             'medecin_id' => $medecin2->id
         ]);

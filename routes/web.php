@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +71,8 @@ Route::middleware(['auth', 'role:patient'])->group(function () {
     Route::get('/dashboard/patient', [DashboardController::class, 'patient'])
         ->name('dashboard.patient');
 });
+
+
 
 
 

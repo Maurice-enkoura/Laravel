@@ -13,7 +13,7 @@ class Service extends Model
         'duree',
         'statut',
         'medecin_id',
-        'date',
+        
     ];
     public function reservations()
     {

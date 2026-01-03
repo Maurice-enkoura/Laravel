@@ -43,7 +43,7 @@ class AuthController extends Controller
         'last_name' => 'required|string|max:255',   
         'email' => 'required|email|unique:users',
         'password' => 'required|min:8|confirmed',
-        'role' => 'required|in:patient,medecin,admin',  
+        'role' => 'required|in:patient,medecin,admin',  // Rôle; on peut ,mettre patient et forcer a ce niveau 'role' => $validated['patient'],
         'terms' => 'required',  
     ]);
 
@@ -57,6 +57,7 @@ class AuthController extends Controller
         'password' => Hash::make($validated['password']),
         'role' => $validated['role'],
     ]);
+    return redirect()->route('login')->with('success', 'Inscription réussie. Vous pouvez maintenant vous connecter.');
 
     // Connecter automatiquement l'utilisateur après inscription
     Auth::login($user);

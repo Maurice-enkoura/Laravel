@@ -49,6 +49,10 @@ class ReservationController extends Controller
         if ($reservation->user_id != Auth::id()) {
             abort(403);
         }
+
+        if ($reservation->statut !== 'en_attente') {
+            return back()->with('error', 'Impossible d’annuler cette réservation.');
+        }
         // Correction: le statut doit correspondre à celui attendu dans MedecinController
         // 'annulée' au lieu de 'annulee'
         $reservation->update(['statut' => 'annulée']);

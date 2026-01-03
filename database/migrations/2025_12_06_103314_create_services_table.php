@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->decimal('prix', 8, 2)->default(0);
             $table->integer('duree');
-            $table->date('date')->nullable();
+           // $table->date('date')->nullable();
             $table->enum('statut', ['actif', 'inactif'])->default('actif');
             $table->unsignedBigInteger('medecin_id')->nullable();
             $table->timestamps();
