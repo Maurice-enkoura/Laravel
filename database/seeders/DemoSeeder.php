@@ -48,11 +48,57 @@ class DemoSeeder extends Seeder
             'medecin_id' => $medecin->id
         ]);
 
+        $service = Service::create([
+            'titre' => 'Consultation générale',
+            'description' => 'Consultation de médecine générale pour examen de routine, suivi de santé et traitement des maladies courantes.',
+            'prix' => 50.00,
+            'duree' => 30,
+            'statut' => 'actif',
+            'medecin_id' => $medecin->id
+        ]);
+
+        $service = Service::create([
+            'titre' => 'Cardiologie',
+            'description' => 'Consultation spécialisée en cardiologie pour l\'évaluation et le suivi des maladies cardiaques.',
+            'prix' => 80.00,
+            'duree' => 45,
+            'statut' => 'actif',
+            'medecin_id' => $medecin->id
+        ]);
+
+        $service = Service::create([
+            'titre' => 'Dermatologie',
+            'description' => 'Consultation en dermatologie pour les problèmes de peau, cheveux et ongles.',
+            'prix' => 70.00,
+            'duree' => 30,
+            'statut' => 'actif',
+            'medecin_id' => $medecin->id
+        ]);
+
+        $service = Service::create([
+            'titre' => 'Ophtalmologie',
+            'description' => 'Examen de la vue et consultation pour problèmes oculaires.',
+            'prix' => 65.00,
+            'duree' => 40,
+            'statut' => 'actif',
+            'medecin_id' => $medecin->id
+        ]);
+
+        $service = Service::create([
+            'titre' => 'Pédiatrie',
+            'description' => 'Consultation pédiatrique pour enfants de 0 à 18 ans.',
+            'prix' => 55.00,
+            'duree' => 30,
+            'statut' => 'inactif',
+            'medecin_id' => $medecin->id
+        ]);
+
+
         // =======================
         // RÉSERVATIONS
         // =======================
-
-        // Consultation passée (effectuée)
+        /*
+         // Consultation passée (effectuée)
         Reservation::create([
             'user_id' => $patient->id,
             'service_id' => $service->id,
@@ -92,6 +138,8 @@ class DemoSeeder extends Seeder
             'commentaire' => 'Rendez-vous annulé par le patient.'
         ]);
 
+        */
+       
         // =======================
         // SECOND MÉDECIN + SERVICE
         // =======================

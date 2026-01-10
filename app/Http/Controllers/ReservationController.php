@@ -15,8 +15,6 @@ class ReservationController extends Controller
         return view('reservations.create', compact('service'));
     }
 
-
-
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -33,15 +31,16 @@ class ReservationController extends Controller
             ->with('success', 'Réservation enregistrée.');
     }
 
-
     public function myReservations()
     {
+        // Remplacez ->get() par ->paginate()
         $reservations = Reservation::with('service')
-            ->where('user_id',  Auth::id())
-            ->get();
+            ->where('user_id', Auth::id())
+            ->orderBy('created_at', 'desc')
+            ->paginate(10); // 10 réservations par page
+        
         return view('reservations.patient_index', compact('reservations'));
     }
-
 
     public function cancel($id)
     {
@@ -51,10 +50,9 @@ class ReservationController extends Controller
         }
 
         if ($reservation->statut !== 'en_attente') {
-            return back()->with('error', 'Impossible d’annuler cette réservation.');
+            return back()->with('error', 'Impossible d\'annuler cette réservation.');
         }
-        // Correction: le statut doit correspondre à celui attendu dans MedecinController
-        // 'annulée' au lieu de 'annulee'
+        
         $reservation->update(['statut' => 'annulée']);
         return back()->with('success', 'Réservation annulée.');
     }

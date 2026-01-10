@@ -10,8 +10,8 @@ class ServiceController extends Controller
     public function index()
     {
         // Correction: remplacer 'which' par 'with'
-        $services = Service::where('statut', 'actif')->with('medecin')->get();
-        return view('dashboard.dashboardPatient', compact('services'));
+        $services = Service::where('statut', 'actif')->with('medecin')->paginate(9);
+        return view('services.index', compact('services'));
     }
 
     public function show($id)

@@ -44,6 +44,7 @@ class AuthController extends Controller
         'email' => 'required|email|unique:users',
         'password' => 'required|min:8|confirmed',
         'role' => 'required|in:patient,medecin,admin',  // Rôle; on peut ,mettre patient et forcer a ce niveau 'role' => $validated['patient '],
+        //'role' => 'required|in:patient',
         'terms' => 'required',  
     ]);
 
